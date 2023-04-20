@@ -14,5 +14,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
+    - name:
+      run: docker login --username sfaa5050 --password dckr_pat_HOinMS7YvHxSsSyO-54ocMiuM10
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build -t sfaa5050/myyimage .
+    - name: "pushing"
+      run: docker push  sfaa5050/myyimage
